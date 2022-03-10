@@ -8,7 +8,7 @@
 		<div class="row">
 						<div class="col-sm-4"><span style="color:red">*</span> supplier :</div>
 						<div class="col-sm-8">
-								<select name="" id="">
+								<select name="supplier" id="supplier">
 									<option value="">select supplier</option>
 									@foreach($suppliers as $supplier)
 									<option value="{{$supplier->supplier_id}}">{{$supplier->supplier_name}}</option>
@@ -97,12 +97,17 @@
 		<div class="row">
 						<div class="col-sm-5"><span style="color:red">*</span>Select Item</div>
 						<div class="col-sm-7">
+							
 								<select name="productSelect" id="productSelect">
 									<option value="">select product</option>
 									@foreach($products as $product)
 									<option value="{{$product->product_id}}">{{$product->products_name}}</option>
 									@endforeach
 								</select>
+							
+
+
+
 						</div>
 			</div>
 		</div>  <!--  end col-sm-6 -->
@@ -159,64 +164,74 @@
 @section('script')
 <script type = "text/javascript" >
     $('#productSelect').change(function() {
+    	var supplierval=$('#supplier').val();
+	var isValid=true;
+    	if(supplierval>0){
 
-        var product_id = parseInt($('#productSelect').val());
+    		 var product_id = parseInt($('#productSelect').val());
 
-        $('#proct_tk_quantity').empty();
-        $('#totalvat').text('');
-        $('#total').text('');
-        $('#cdiscount').text('');
+				        $('#proct_tk_quantity').empty();
+				        $('#totalvat').text('');
+				        $('#total').text('');
+				        $('#cdiscount').text('');
 
-        $('#grandtotal').text('');
-        axios.post('/pproduct', {
-            product_id: product_id
-        }).then(function(response) {
-            var jsonData = response.data;
-            $('<div>').html(
+				        $('#grandtotal').text('');
+				        axios.post('/pproduct', {
+				            product_id: product_id
+				        }).then(function(response) {
+				            var jsonData = response.data;
+				            $('<div>').html(
 
-                "<table class='table table-hover'>" +
-                "<thead>" +
-                "<tr>" +
-                "<th>Product</th>" +
-                "<th>Price (Tk.)</th>" +
-                "<th>Quantity</th>" +
+				                "<table class='table table-hover'>" +
+				                "<thead>" +
+				                "<tr>" +
+				                "<th>Product</th>" +
+				                "<th>Price (Tk.)</th>" +
+				                "<th>Quantity</th>" +
 
-                "<th>VAT (%)</th>" +
-                "<th>Amount (Tk.)</th>" +
-                "<th>Action</th>" +
+				                "<th>VAT (%)</th>" +
+				                "<th>Amount (Tk.)</th>" +
+				                "<th>Action</th>" +
 
-                "</tr>" +
-                "</thead>" +
-                "<tbody>" +
-                " <tr>" +
-                "<td id='name'>" + jsonData[0].products_name + "</td>" +
-                "<td id='purchase_price'>" + jsonData[0].purchase_price + "</td>" +
-                "<td><input type='text' id='Quantity' value='1' style='width:50px; text-align:center'> </td>" +
-                "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
-                "<td>" + jsonData[0].purchase_price + "</td>" +
-                "<td > <button type='button' class='btn btn-danger btn-sm' id='delete_btn'>Delete</button>" +
+				                "</tr>" +
+				                "</thead>" +
+				                "<tbody>" +
+				                " <tr>" +
+				                "<td id='name'>" + jsonData[0].products_name + "</td>" +
+				                "<td id='purchase_price'>" + jsonData[0].purchase_price + "</td>" +
+				                "<td><input type='text' id='Quantity' value='1' style='width:50px; text-align:center'> </td>" +
+				                "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
+				                "<td>" + jsonData[0].purchase_price + "</td>" +
+				                "<td > <button type='button' class='btn btn-danger btn-sm' id='delete_btn'>Delete</button>" +
 
-                "</tr>" +
-                " </tbody>" +
-                "  </table>"
-
-
-            ).appendTo('#proct_tk_quantity');
-
-
-            purchase_calculation();
+				                "</tr>" +
+				                " </tbody>" +
+				                "  </table>"
 
 
+				            ).appendTo('#proct_tk_quantity');
 
 
-        }).catch(function(error) {
+				            purchase_calculation();
 
-        });
 
-    }); //end onchange
+
+
+				        }).catch(function(error) {
+
+				        });
+    		
+    	}else{
+    		isValid=false;
+    		alert('select supplier');
+    		$('#supplier').focus();
+    		return isValid;
+    	}
+}); //end product select onchange
 
 function purchase_calculation() {
-
+	var isValid=true;
+	var supplierval=$('#supplier').val();
     var purchase_price = $('#purchase_price').text();
     var Quantity = parseInt($('#Quantity').val());
     var discount = $('#discount').val();
