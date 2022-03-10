@@ -1,0 +1,1203 @@
+/*// extra-Small devices (landscape phones, 320px and up)*/
+@media (min-width: 320px) and (max-width: 575px) {
+	.header_content{
+		padding-left: 0;
+	}
+	.header_content ul li{
+		padding: 1px;
+	}
+	.header_content ul li a{
+	  font-size: 4px;
+	  font-weight: 800;
+	}
+	.header_logo{
+		padding-top: 24px;
+	}
+	.logo img{
+		width: 70%;
+		margin-left: -30px;
+	 }
+	 .search{
+		width: 60%;
+		margin-left: 4;
+		font-size: 8px;
+	}
+	 .search_button i.fa{
+		width: 30px;
+	    margin-right: 35px;
+	}
+	 .header_img_section i.fa{
+		 font-size:20px;
+		 margin-left: -30px;
+		 margin-top: 14px;
+	}
+	.header_img_section img{
+		width: 100px;
+		margin-top: -10px;
+	}
+	.search_cart{
+		font-size: 14px;
+	}
+	.categories_section {
+		margin-left: 1%;
+	}
+	.banner{
+		padding-top: 120px;
+	}
+	.slider-area .owl-dots {
+		left: 35%;
+	}
+	.item img{
+		width: 100%;
+		height: 244px;
+		margin-left:0;
+     }
+	 .card_banner_top {
+		margin-left: 0px;
+		margin-bottom: 30px;
+	
+	}
+	 .card_banner_top img{
+		width: 100%;
+		border-radius: 20px;
+		height: 120px;
+	}
+	.text_block {
+		left: 70%;
+		width: 25%;
+		padding: 4px;
+		height: 30px;
+	  }
+	  .text_block h4{
+		  font-size: 12px;
+	  }
+	  .card_title h3{
+		font-size: 20px;
+		margin-top: -30px;
+	}
+	.time_content h4{
+		font-size: 10px;
+		margin-left: -15px;
+	}
+	.time_counter h5{
+		font-size: 10px;
+		margin-left: 10px;
+	}
+	.text_show h4{
+		font-size: 8px;
+		margin-left:25px;
+		width: 60px;
+		height: 20px;
+		padding: 4px;
+        margin-top: -4px;
+	}
+	.widget_wrap {
+		margin-left: 10px;
+	}
+	.jst-hours {
+		font-size: 10px;
+		height: 20px;
+		width: 20px;
+	  }
+	  .jst-minutes {
+		font-size: 10px;
+		height: 20px;
+		width: 20px;
+	  }
+	  .jst-seconds {
+		font-size: 10px;
+		height: 20px;
+		width: 20px;
+	  }
+	  .img_card_section{
+		margin-left: 45px;
+		margin-bottom: 35px;
+	}
+	.text_area{
+		font-size: 20px;
+		margin-top: -4px;
+		margin-left: 20px;
+	}
+	.text_button{
+	   margin-left: 50%;
+	   font-size: 12px;
+	}
+	.text_button i.fa{
+		font-size: 12px;
+	}
+	.mall_card{
+		margin-left: 45px;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+	.collection_text_button{
+		margin-left: 30%;
+	   font-size: 12px;
+	}
+	.box_1{
+		margin-top: 10px;
+		width: 240px;
+		height: 150px;
+		margin-left: 45px;
+	}
+	.box_img{
+		margin-left: 40px;
+	}
+	.category_content{
+		width: 80px;
+		height: 80px;
+		margin-top: 8px;
+	}
+	.category_content img{
+		width: 20px;
+		height: 20px;
+		margin-left: 10px;
+		margin-top:0px;
+	}
+	.category_content p{
+		font-size: 6px; 
+	}
+	.Popular_text_button{
+		margin-left: 20%;
+		font-size: 12px;
+	 }
+	 .most_propular_left{
+		width: 250px;
+		height: 250px;
+		margin-left: 30px;
+		margin-top: 10px;
+		margin-bottom: 15px;
+	 }
+	 .most_propular_content{
+		width: 80px;
+		height: 80px;
+	 }
+	 .propular_img_section img{
+		width: 20px;
+		height: 20px;
+		margin-left:0px;
+	 }
+	 .propular_content_section h5{
+		font-size: 8px;
+	 }
+	 .propular_content_section p{
+		font-size: 8px;
+	}
+	.most_propular_right{
+		margin-left: 10px;
+	 }
+	 .propular_content_section{
+		margin-left: 8px;
+	}
+	.all_item_box{
+	   margin-left: 45px;
+	   margin-top: 10px;
+	   margin-bottom: 10px;
+	}
+	.all_border{
+		width: 200px;
+		margin-left: 15%;
+	}
+	.footer_1,
+	.footer_2,
+	.footer_3 {
+		margin-left: 50px;
+	}
+	.footer_1 a,
+	.footer_2 a,
+	.footer_3 a{
+		font-size: 10px;
+	}
+    .footer_1 h3,
+	.footer_2 h3,
+	.footer_3 h3{
+	font-size: 14px;
+	}
+	.qr_code img{
+		width: 40px;
+		height: 40px;
+		margin-left: 40px;
+		margin-top: 6px;
+	}
+	.daraz_logo img{
+		width: 20px;
+		height: 20px;
+	}
+	.daraz_logo h5{
+		font-size: 10px;
+	}
+	.daraz_logo p{
+		font-size: 8px;
+	}
+	.footer{
+		padding-left: 30px;
+	}
+	.footer_part_2{
+		padding-left: 10px;
+	}
+	.footer_box_1,
+	.footer_box_2,
+	.footer_box_3{
+		width: 90px;
+		height: 60px;
+		padding: 8px;
+		bottom: 4px;
+	}
+	.app_logo i.fa-brands{
+		font-size: 15px;
+	}
+	.app_content p{
+		font-size: 6px;
+	}
+	.app_content span {
+		font-size: 8px;
+	}
+	.footer_6 h3,
+	.footer_7 h3,
+	.footer_8 h3,
+	.footer_9 h3{
+		font-size: 14px;
+	}
+	.footer_part_2{
+		margin-left: 40px;
+	}
+	.footer_6,
+	.footer_7,
+	.footer_8,
+	.footer_9 {
+		padding: 10px;
+	}
+	.footer_8 span i.fa-brands{
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+	}
+    .footer_part_3{
+		margin-left: 70px;
+	}
+	.left_content{
+		margin-left: -20px;
+		font-size: 12px;
+	}
+	.mobile_header{
+		margin-left: -25px;
+		font-size: 12px;
+	}
+	.min_max p {
+		margin-left:-130px;
+		margin-top: -45px;
+	}
+	.min_price{
+		width: 60px;
+		margin-left:-40px;
+	}
+	.max_price{
+		width: 60px;
+		margin-left:40px;
+		margin-top: -36px;
+	}
+	.price_butn{
+		margin-top: -35px;
+		margin-left: 110px;
+	}
+	.right_content{
+		margin-left: -25px;
+	}
+	.right_content h3{
+		font-size: 14px;
+		padding-bottom: 8px;
+	}
+	.right_content p,
+	.right_content span{
+		font-size: 10px;
+	}
+	.Sort{
+		margin-left: 0px;
+	}
+	.mobile_item_box{
+		margin-left: -30px;
+	}
+	.text_body h1{
+       font-size: 14px;
+	}
+	.text_body span{
+		margin-right: 10px;
+		width: 30px;
+	}
+	.text_body h3,
+  .text_body h4{
+      font-size: 14px;
+  }
+  .text_body .txt{
+      font-size: 12px;
+  }
+}
+
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {
+ 
+	.header_content{
+		padding-left: 16%;
+	}
+	.header_content ul li{
+		padding: 2px;
+	}
+	.header_content ul li a{
+	  font-size: 6px;
+	  font-weight: 800;
+	  padding-top: -2px;
+	}
+	.header_logo{
+		padding-top: 24px;
+
+	}
+	.logo img{
+		width: 70%;
+		margin-left: -30px;
+	 }
+	 .search{
+		width: 80%;
+		font-size: 8px;
+		margin-left: -10px;
+	}
+	 .search_button i.fa{
+		width: 30px;
+	    margin-right: 15px;
+	}
+	 .header_img_section i.fa{
+		 font-size:20px;
+		 margin-left: 0px;
+		 margin-top: 14px;
+	}
+	.header_img_section img{
+		width: 100px;
+		margin-left: 30px;
+		margin-top: -60px;
+	}
+	.categories_section {
+		margin-left: 10%;
+	}
+	.banner{
+		padding-top: 120px;
+	}
+	.slider-area .owl-dots {
+		left: 35%;
+	}
+	.item img{
+		width: 100%;
+		height: 244px;
+		margin-left:0;
+     }
+	 .text_block {
+		left: 70%;
+		width: 25%;
+		padding: 4px;
+		height: 30px;
+	  }
+	  .text_block h4{
+		  font-size: 12px;
+	  }
+	 .card_banner_top {
+		margin-left: 0px;
+		margin-bottom: 30px;
+	
+	}
+	 .card_banner_top img{
+		width: 100%;
+		border-radius: 20px;
+		height: 120px;
+	}
+	  .card_title h3{
+		font-size: 20px;
+		margin-top: -30px;
+	}
+	.time_content h4{
+		font-size: 12px;
+		margin-left: -15px;
+	}
+	.time_counter h5{
+		font-size: 12px;
+		margin-left: 10px;
+	}
+	.text_show h4{
+		font-size: 10px;
+		margin-left:170px;
+		width: 80px;
+		height: 30px;
+		padding: 10px;
+        margin-top: -8px;
+	}
+	.widget_wrap {
+		margin-left: 10px;
+	}
+	.jst-hours {
+		font-size: 10px;
+		height: 20px;
+		width: 30px;
+	  }
+	  .jst-minutes {
+		font-size: 10px;
+		height: 20px;
+		width: 30px;
+	  }
+	  .jst-seconds {
+		font-size: 10px;
+		height: 20px;
+		width: 30px;
+	  }
+	  .img_card_section{
+		margin-left: -8px;
+		margin-bottom: 35px;
+		width: 100px;
+	}
+	.card-title{
+		font-size: 8px;
+	}
+	.card-body h5{
+		font-size: 14px;
+	}
+	.card-body i.fas{
+		font-size: 14px;
+	}
+	 .card-body h6{
+	   font-size: 12px;
+	 }
+	 .card-body span{
+		margin-right: -4px;
+		font-size: 10px;
+	 }
+	.text_area{
+		font-size: 20px;
+		margin-top: -4px;
+		margin-left: 20px;
+	}
+	.text_button{
+	   margin-left: 70%;
+	   font-size: 12px;
+	}
+	.text_button i.fa{
+		font-size: 12px;
+	}
+	.mall_card{
+		margin-left: -8px;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		width: 100px;
+		height: 160px;
+	}
+	.box_section{
+		width: 40px;
+		margin-left: 24px;
+		font-size: 6px;
+		padding: 6px;
+	}
+	.mall-card-body h2{
+		font-size: 8px;
+		margin-top: 6px;
+	}
+	.mall-card-body p{
+		font-size: 6px;
+	}
+	.collection_text_button{
+		margin-left: 60%;
+	    font-size: 12px;
+	}
+	.box_1{
+		margin-top: 10px;
+		width: 140px;
+		height: 100px;
+		margin-left: -4px;
+	}
+	.box_img{
+		margin-left: 20px;
+	}
+	.box_img img{
+		width: 30px;
+		height: 30px;
+	}
+	.box_text h4{
+	   font-size: 10px;
+	}
+	.box_text p{
+		font-size: 8px;
+	}
+	.category_content{
+		width: 80px;
+		height: 80px;
+		margin-top: 8px;
+	}
+	.category_content img{
+		width: 20px;
+		height: 20px;
+		margin-left: 10px;
+		margin-top:0px;
+	}
+	.category_content p{
+		font-size: 6px; 
+	}
+	.Popular_text_button{
+		margin-left: 55%;
+		font-size: 12px;
+	 }
+	 .most_propular_left{
+		width: 150px;
+		height: 180px;
+		margin-left: 0px;
+		margin-top: 10px;
+		margin-bottom: 15px;
+	 }
+	 .most_propular_left h5{
+	    font-size: 10px;
+	 }
+	 .most_propular_left img{
+		width: 100px;
+		height: 90px;
+		margin-left: 20px;
+	 }
+	 .most_propular_content{
+		width: 80px;
+		height: 80px;
+	 }
+	 .propular_img_section img{
+		width: 20px;
+		height: 20px;
+		margin-left:0px;
+	 }
+	 .propular_content_section h5{
+		font-size: 8px;
+	 }
+	 .propular_content_section p{
+		font-size: 8px;
+	}
+	.most_propular_right{
+		margin-left: 65px;
+		margin-top: 10px;
+	 }
+	 .propular_content_section{
+		margin-left: 8px;
+	}
+	.all_item_box{
+	   margin-left: -8px;
+	   margin-top: 10px;
+	   margin-bottom: 10px;
+	   width: 100px;
+	}
+	.all_item_box p{
+		font-size: 8px;
+	 }
+	.all_item_box h5{
+	   font-size: 10px;
+	}
+	.all_item_box h6{
+		font-size: 10px;
+		margin-left: -10px;
+	 }
+	.all_item_box i.fas{
+		font-size: 10px;
+	}
+	.all_item_box span{
+		margin-right: -8px;
+		font-size: 10px;
+		margin-top: 1px;
+	}
+	.star span i.fas{
+		font-size: 8px;
+	}
+	.all_border{
+		width: 200px;
+		margin-left: 35%;
+	}
+	.footer_1,
+	.footer_2,
+	.footer_3 {
+		margin-left: 50px;
+	}
+	.footer_1 a,
+	.footer_2 a,
+	.footer_3 a{
+		font-size: 10px;
+	}
+    .footer_1 h3,
+	.footer_2 h3,
+	.footer_3 h3{
+	font-size: 14px;
+	}
+	.qr_code img{
+		width: 60px;
+		height: 60px;
+		margin-left: 40px;
+		margin-top: 6px;
+	}
+	.daraz_logo img{
+		width: 30px;
+		height: 30px;
+	}
+	.daraz_logo h5{
+		font-size: 12px;
+	}
+	.daraz_logo p{
+		font-size: 8px;
+	}
+	.footer_1,
+	.footer_2 {
+       margin-left: -2px;
+	}
+	.footer_3{
+		margin-left: 30%;
+		margin-top: -180px;
+	}
+	.footer_4{
+		margin-left: 100%;
+		margin-top: -80%;
+	}
+	.footer_5{
+		margin-left: 110%;
+	}
+	.footer_box_1,
+	.footer_box_2,
+	.footer_box_3{
+		width: 100px;
+		height: 50px;
+		padding: 8px;
+		bottom: 4px;
+	}
+	.app_logo i.fa-brands{
+		font-size: 15px;
+	}
+	.app_content p{
+		font-size: 8px;
+	}
+	.app_content span {
+		font-size: 8px;
+	}
+	.footer_6 h3,
+	.footer_7 h3,
+	.footer_8 h3,
+	.footer_9 h3{
+		font-size: 10px;
+	}
+	.footer_part_2{
+		margin-left: 0px;
+	}
+	.footer_6,
+	.footer_7,
+	.footer_8,
+	.footer_9 {
+		padding: 8px;
+	}
+	.footer_6 img{
+		width: 100px; 
+		height: 60px; 
+	}
+	.footer_7 img{
+		width: 100px; 
+		height: 60px;
+	}
+	.footer_9 img{
+		width: 120px;
+		 height: 60px;
+	}
+	.footer_8 span i.fa-brands{
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 8px;
+	}
+    .footer_part_3{
+		margin-left: 4%;
+	}
+	.mobile_item_box p{
+		font-size: 10px;
+		margin-left: 10px;
+	}
+	.mobile_item_box{
+		width: 130px;
+		margin-left: -50px;
+	}
+	.view span{
+		margin-left: 50px;
+	}
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+ 
+	.header_content{
+		padding-left: 16%;
+	}
+	.header_content ul li{
+		padding: 8px;
+		margin-top: -4px;
+	}
+	.header_content ul li a{
+	  font-size: 8px;
+	  font-weight: 800;
+	}
+	.header_img_section i.fa{
+		padding-top: 16px;
+	}
+	.header_img_section img{
+		margin-top: -60px;
+		margin-left: 120px;
+	}
+	.categories_section {
+		margin-left: 10%;
+	}
+	.banner{
+		padding-top: 120px;
+	}
+	.slider-area .owl-dots {
+		left: 35%;
+	}
+	.item img{
+		width: 100%;
+		height: 244px;
+		margin-left:0;
+     }
+	 .text_block {
+		left: 70%;
+		width: 25%;
+		padding: 4px;
+		height: 30px;
+	  }
+	  .text_block h4{
+		  font-size: 12px;
+	  }
+	 .card_banner_top {
+		margin-left: 0px;
+		margin-bottom: 30px;
+	
+	}
+	 .card_banner_top img{
+		width: 100%;
+		border-radius: 20px;
+		height: 120px;
+	}
+	  .card_title h3{
+		font-size: 20px;
+		margin-top: -30px;
+	}
+	.time_content h4{
+		font-size: 12px;
+		margin-left: -15px;
+	}
+	.time_counter h5{
+		font-size: 12px;
+		margin-left: 10px;
+	}
+	.text_show h4{
+		font-size: 10px;
+		margin-left:340px;
+		width: 80px;
+		height: 30px;
+		padding: 10px;
+        margin-top: -8px;
+	}
+	.widget_wrap {
+		margin-left: 10px;
+	}
+	.jst-hours {
+		font-size: 10px;
+		height: 30px;
+		width: 30px;
+	  }
+	  .jst-minutes {
+		font-size: 10px;
+		height: 30px;
+		width: 30px;
+	  }
+	  .jst-seconds {
+		font-size: 10px;
+		height: 30px;
+		width: 30px;
+	  }
+	  .img_card_section{
+		margin-left: -6px;
+		margin-bottom: 35px;
+		width: 120px;
+	}
+	.card-title{
+		font-size: 8px;
+	}
+	.card-body h5{
+		font-size: 14px;
+	}
+	.card-body i.fas{
+		font-size: 14px;
+	}
+	 .card-body h6{
+	   font-size: 12px;
+	 }
+	 .card-body span{
+		margin-right: -4px;
+		font-size: 10px;
+	 }
+	.text_area{
+		font-size: 20px;
+		margin-top: -4px;
+		margin-left: 20px;
+	}
+	.text_button{
+	   margin-left: 80%;
+	   font-size: 12px;
+	}
+	.text_button i.fa{
+		font-size: 12px;
+	}
+	.mall_card{
+		margin-left: -6px;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		width: 120px;
+		height: 160px;
+	}
+	.box_section{
+		width: 50px;
+		margin-left: 20px;
+		font-size: 8px;
+	}
+	.mall-card-body h2{
+		font-size: 10px;
+		margin-top: 6px;
+	}
+	.mall-card-body p{
+		font-size: 8px;
+	}
+	.collection_text_button{
+		margin-left: 70%;
+	    font-size: 12px;
+	}
+	.box_1{
+		margin-top: 10px;
+		width: 160px;
+		height: 100px;
+		margin-left: -4px;
+	}
+	.box_img{
+		margin-left: 20px;
+	}
+	.box_img img{
+		width: 30px;
+		height: 30px;
+	}
+	.box_text h4{
+	   font-size: 10px;
+	}
+	.box_text p{
+		font-size: 8px;
+	}
+	.category_content{
+		width: 100px;
+		height: 80px;
+		margin-top: 8px;
+	}
+	.category_content img{
+		width: 20px;
+		height: 20px;
+		margin-left: 30px;
+		margin-top:0px;
+	}
+	.category_content p{
+		font-size: 6px; 
+	}
+	.Popular_text_button{
+		margin-left: 68%;
+		font-size: 12px;
+	 }
+	 .most_propular_left{
+		width: 180px;
+		height: 200px;
+		margin-left: 0px;
+		margin-top: 10px;
+		margin-bottom: 15px;
+	 }
+	 .most_propular_left h5{
+	    font-size: 10px;
+	 }
+	 .most_propular_left img{
+		width: 120px;
+		height: 100px;
+		margin-left: 30px;
+	 }
+	 .most_propular_content{
+		width: 130px;
+		height: 100px;
+	 }
+	 .propular_img_section img{
+		width: 30px;
+		height: 30px;
+		margin-left:0px;
+	 }
+	 .propular_content_section h5{
+		font-size: 10px;
+	 }
+	 .propular_content_section p{
+		font-size: 8px;
+	}
+	.most_propular_right{
+		margin-left: 65px;
+		margin-top: 10px;
+	 }
+	 .propular_content_section{
+		margin-left: 8px;
+	}
+	.all_item_box{
+	   margin-left: -6px;
+	   margin-top: 10px;
+	   margin-bottom: 10px;
+	   width: 120px;
+	}
+	.all_item_box p{
+		font-size: 8px;
+	 }
+	.all_item_box h5{
+	   font-size: 10px;
+	}
+	.all_item_box h6{
+		font-size: 10px;
+		margin-left: -10px;
+	 }
+	.all_item_box i.fas{
+		font-size: 10px;
+	}
+	.all_item_box span{
+		margin-right:-10px;
+		font-size: 10px;
+		margin-top: 1px;
+	}
+	.star span i.fas{
+		font-size: 8px;
+	}
+	.all_border{
+		width: 200px;
+		margin-left: 35%;
+	}
+	.footer_1,
+	.footer_2,
+	.footer_3 {
+		margin-left: 50px;
+	}
+	.footer_1 a,
+	.footer_2 a,
+	.footer_3 a{
+		font-size: 10px;
+	}
+    .footer_1 h3,
+	.footer_2 h3,
+	.footer_3 h3{
+	font-size: 14px;
+	}
+	.qr_code img{
+		width: 60px;
+		height: 60px;
+		margin-left: 40px;
+		margin-top: 6px;
+	}
+	.daraz_logo img{
+		width: 30px;
+		height: 30px;
+	}
+	.daraz_logo h5{
+		font-size: 12px;
+	}
+	.daraz_logo p{
+		font-size: 8px;
+	}
+	.footer_1,
+	.footer_2 {
+       margin-left: -2px;
+	}
+	.footer_3{
+		margin-left: 20%;
+		margin-top: 0px;
+	}
+	.footer_5{
+		margin-left: 10%;
+	}
+	.footer_box_1,
+	.footer_box_2,
+	.footer_box_3{
+		width: 100px;
+		height: 50px;
+		padding: 8px;
+		bottom: 4px;
+	}
+	.app_logo i.fa-brands{
+		font-size: 15px;
+	}
+	.app_content p{
+		font-size: 8px;
+	}
+	.app_content span {
+		font-size: 8px;
+	}
+	.footer_6 h3,
+	.footer_7 h3,
+	.footer_8 h3,
+	.footer_9 h3{
+		font-size: 14px;
+		margin-left: -12px;
+	}
+	.footer_part_2{
+		margin-left: 0px;
+	}
+	.footer_6,
+	.footer_7,
+	.footer_8,
+	.footer_9 {
+		padding: 8px;
+	}
+	.footer_6 img{
+		width: 160px; 
+		height: 60px; 
+		margin-left: -14px;
+	}
+	.footer_7 img{
+		width: 160px; 
+		height: 60px;
+		margin-left: -14px;
+	}
+	.footer_9 img{
+		width: 120px;
+		 height: 60px;
+		 margin-left: -16px;
+	}
+	.footer_8 span i.fa-brands{
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		font-size: 8px;
+	}
+	.footer_8 span {
+       margin-left: -16px;
+	}
+   
+  
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  
+
+	.header_content{
+		padding-left: 16%;
+	}
+	.header_content ul li{
+		padding: 8px;
+		margin-top: -4px;
+	}
+	.header_content ul li a{
+	  font-size: 8px;
+	  font-weight: 800;
+	}
+	.header_img_section i.fa{
+		padding-top: 16px;
+	}
+	.header_img_section img{
+		margin-top: -60px;
+		margin-left: 120px;
+	}
+	.categories_section {
+		margin-left: 10%;
+	}
+	.banner{
+		padding-top: 120px;
+	}
+	.text_show h4{
+		margin-left:490px;
+		margin-top: -10px;
+	}
+	.img_card_section{
+		margin-left: -6px;
+		margin-bottom: 35px;
+		width: 160px;
+	}
+	.card-body span{
+		margin-right: 50px;
+	 }
+	.text_button{
+		margin-left: 80%;
+	 }
+	 .mall_card{
+		width: 160px;
+		height: 250px;
+		margin-right: 8px;
+	}
+	.box_section{
+		width: 70px;
+		height: 40px;
+		margin-left: 40px;
+	}
+	.mall-card-body h2{
+		font-size: 14px;
+	}
+	.mall-card-body p{
+		font-size: 10px;
+	}
+	.collection_text_button{
+	  margin-left: 70%;
+	}
+	.box_1{
+		width: 240px;
+		height: 150px;
+	}
+	.box_img{
+		margin-top: 20px;
+		margin-left: 40px;
+	}
+	.category_content{
+	   margin-top: 10px;
+	}
+	.category_content img{
+		width: 40px;
+		height: 40px;
+		margin-left: 35px;
+	}
+	.Popular_text_button{
+		margin-left: 70%;
+	 }
+	 .most_propular_left {
+	   margin-left: 10px;
+	   margin-top: 10px;
+	 }
+	 .propular_img_section img{
+		width: 40px;
+		height: 40px;
+	 }
+	 .propular_content_section h5{
+		font-size: 14px;
+	 }
+	 .propular_content_section p{
+		font-size: 10px;
+	}
+	.most_propular_right{
+		margin-left: 110px;
+		margin-top: 10px;
+	 }
+	 
+	.all_item_box{
+		margin-left: -6px;
+		width: 170px;
+	 }
+	 .all_item_box span{
+		margin-right: 20px;
+	 }
+	 .footer_box_1,
+	 .footer_box_2,
+	 .footer_box_3{
+		 width: 170px;
+		 height: 80px;
+		 background-color: black;
+		 border-radius: 10px;
+		 border: 2px solid white;
+		 padding: 15px;
+		 bottom: 4px;
+	 }
+}
+
+/*// X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) and (max-width: 1399px) {}
+
+/*// XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {}
