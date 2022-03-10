@@ -157,125 +157,173 @@
 
 @endsection
 @section('script')
-<script type="text/javascript">
-	$('#productSelect').change(function(){
-		
-		 var product_id=parseInt($('#productSelect').val());
-		
-		    $('#proct_tk_quantity').empty();
-		    $('#totalvat').text(''); 	
- 			$('#total').text('');  
-            $('#cdiscount').text('');
+<script type = "text/javascript" >
+    $('#productSelect').change(function() {
 
-  		    $('#grandtotal').text('');
-		  axios.post('/pproduct',{
-		 	product_id:product_id
-		 }).then(function(response){
- var jsonData = response.data;
-$('<div>').html(
+        var product_id = parseInt($('#productSelect').val());
 
-"<table class='table table-hover'>"+
-    "<thead>" +
-     "<tr>"+
-        "<th>Product</th>"+
-         "<th>Price (Tk.)</th>"+
-        "<th>Quantity</th>"+
-       
-         "<th>VAT (%)</th>"+
-        "<th>Amount (Tk.)</th>"+
-        "<th>Action</th>"+
-       
-     "</tr>"+
-   "</thead>"+
-"<tbody>"+
-    " <tr>"+
-        "<td id='name'>" + jsonData[0].products_name + "</td>" +
-         "<td id='purchase_price'>" + jsonData[0].purchase_price + "</td>" +
-          "<td><input type='text' id='Quantity' value='1' style='width:50px; text-align:center'> </td>" +
-         "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
-            "<td>" + jsonData[0].purchase_price + "</td>" +
-             "<td> <a href='#'> delete </a></td>" +
-       
-      "</tr>"+
-     " </tbody>"+
-"  </table>"
+        $('#proct_tk_quantity').empty();
+        $('#totalvat').text('');
+        $('#total').text('');
+        $('#cdiscount').text('');
 
+        $('#grandtotal').text('');
+        axios.post('/pproduct', {
+            product_id: product_id
+        }).then(function(response) {
+            var jsonData = response.data;
+            $('<div>').html(
 
-	).appendTo('#proct_tk_quantity');
+                "<table class='table table-hover'>" +
+                "<thead>" +
+                "<tr>" +
+                "<th>Product</th>" +
+                "<th>Price (Tk.)</th>" +
+                "<th>Quantity</th>" +
+
+                "<th>VAT (%)</th>" +
+                "<th>Amount (Tk.)</th>" +
+                "<th>Action</th>" +
+
+                "</tr>" +
+                "</thead>" +
+                "<tbody>" +
+                " <tr>" +
+                "<td id='name'>" + jsonData[0].products_name + "</td>" +
+                "<td id='purchase_price'>" + jsonData[0].purchase_price + "</td>" +
+                "<td><input type='text' id='Quantity' value='1' style='width:50px; text-align:center'> </td>" +
+                "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
+                "<td>" + jsonData[0].purchase_price + "</td>" +
+                "<td > <button type='button' class='btn btn-danger btn-sm' id='delete_btn'>Delete</button>" +
+
+                "</tr>" +
+                " </tbody>" +
+                "  </table>"
 
 
-purchase_calculation();
+            ).appendTo('#proct_tk_quantity');
+
+
+            purchase_calculation();
 
 
 
 
-		
-}).catch(function(error){
+        }).catch(function(error) {
 
-		 });
-		
-	}); //end onchange
+        });
 
-    function purchase_calculation(){
-    	
-    	  	var purchase_price= $('#purchase_price').text();
-    	    var Quantity=parseInt($('#Quantity').val());
-    	    var discount= $('#discount').val();
-    	    var subtotal =purchase_price*Quantity;
-    		var vat = subtotal*0.05;
-    		var bgrandtotal =subtotal+vat; 
-    		var grandtotal =bgrandtotal-discount;
+    }); //end onchange
 
-    	$('#Quantity').keyup(function(){
-    		var Quantity=parseInt($('#Quantity').val());
-    		 var discount= $('#discount').val();
-    		 var grandtotal =bgrandtotal-discount;
-    		var subtotal =purchase_price*Quantity;
-    		var vat = subtotal*0.05;
-    			var grandtotal =subtotal+vat;
-    		  $('#total').text(subtotal);
-    		  $('#totalvat').text(vat);
-    		    $('#grandtotal').text(grandtotal);
-    	});
+function purchase_calculation() {
 
+    var purchase_price = $('#purchase_price').text();
+    var Quantity = parseInt($('#Quantity').val());
+    var discount = $('#discount').val();
+    var subtotal = purchase_price * Quantity;
+    var vat = subtotal * 0.05;
+    var bgrandtotal = subtotal + vat;
+    var grandtotal = bgrandtotal - discount;
 
-    	$('#discount').keyup(function(){
-    		var discount=$('#discount').val();
+    $('#Quantity').keyup(function() {
+			        var Quantity = parseInt($('#Quantity').val());
+			        if(Quantity>=1){
+			        	 var Quantity = parseInt($('#Quantity').val());
+			        var discount = $('#discount').val();
+			        var grandtotal = bgrandtotal - discount;
+			        var subtotal = purchase_price * Quantity;
+			        var vat = subtotal * 0.05;
+			        var grandtotal = subtotal + vat;
+			        $('#total').text(subtotal);
+			        $('#totalvat').text(vat);
+			        $('#grandtotal').text(grandtotal);
 
-    		var Quantity=parseInt($('#Quantity').val());
-    		 var discount= $('#discount').val();
-    		 var grandtotal =bgrandtotal-discount;
-    		var subtotal =purchase_price*Quantity;
-    		var vat = subtotal*0.05;
-    		var grandtotal =subtotal+vat-discount;
-    		    $('#cdiscount').text(discount);
-    		  $('#total').text(subtotal);
-    		  $('#totalvat').text(vat);
-    		    $('#grandtotal').text(grandtotal);
-    	
-    		 		
-    	});
+			        }else{
 
- // if(productval>0){
- 	 $('#totalvat').text(vat); 	
-	  $('#total').text(subtotal);  
-	    $('#cdiscount').text(discount);
+				        $('#totalvat').text('');
+				        $('#total').text('');
+				        $('#cdiscount').text('');
 
-	  $('#grandtotal').text(grandtotal);
- // }else{
- 		
-
- // }
-  
+				        $('#grandtotal').text('');
+			        	alert('cant be zero');
+			        }
+			       
+			       
+			    
+    });
 
 
-    	
-    }
-	
+/////discount start
+
+			       $('#discount').keyup(function() {
+
+			                var discount = $('#discount').val();
+			                var Quantity = parseInt($('#Quantity').val());
+			                var subtotal = purchase_price * Quantity;
+			             	var isValid =true;
+			                if(discount<0 ){
+			                	var isValid =false;
+			                 	alert(' Discount Can not be Zero ');
+			                 	return isValid;
+			                 }
+
+
+			                if(discount>subtotal){
+			                	var isValid =false;
+			                 	alert(' Discount Can not be Greater than total ');
+			                 	return isValid;
+			                 }else{
+					                		var Quantity = parseInt($('#Quantity').val());
+							        		var discount = $('#discount').val();
+							        		var grandtotal = bgrandtotal - discount;
+							        		var subtotal = purchase_price * Quantity;
+							        		var vat = subtotal * 0.05;
+							        		var grandtotal = subtotal + vat - discount;
+							        		$('#cdiscount').text(discount);
+							        		$('#total').text(subtotal);
+							        		$('#totalvat').text(vat);
+							        		$('#grandtotal').text(grandtotal);
+
+
+			                 }
+
+
+				
+					   
+			       		   
+			       
+					 
+                     }); //discount keyup
+/////discount End
+
+
+
+
+    $('#totalvat').text(vat);
+    $('#total').text(subtotal);
+    $('#cdiscount').text(discount);
+
+    $('#grandtotal').text(grandtotal);
+
     
-		
-	
-	
+    // delete start
+    $("#delete_btn").click(function() {
+        $('#proct_tk_quantity').empty();
+        $('#totalvat').text('');
+        $('#total').text('');
+        $('#cdiscount').text('');
+
+        $('#grandtotal').text('');
+
+    });
+    // delete end
+
+
+}
+
+
+
+
 </script>
 @endsection
 

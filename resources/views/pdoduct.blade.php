@@ -218,7 +218,7 @@ $('#product_submit_btn').click(function(){
                     var p_perc_price =parseFloat($('#purchase_price').val()).toFixed(2);
                     var p_retail_price=parseFloat($('#retail_price').val()).toFixed(2);
                     var p_status =   parseInt($('#product_status').val()); 
-var isValid =true;
+   var isValid =true;
    if(p_desc ==''){
 	   isValid= false;
 	   alert('select Product Description');
