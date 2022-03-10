@@ -71,3 +71,6 @@ Route::post('/location_store',[StockLocationController::class,'LocationStore']);
 //purchase
 Route::get('/purchase',[PurchaseController::class,'index']);
 Route::post('/pproduct',[PurchaseController::class,'Getpurchaseinformation']);
+
+//purchase pdf
+Route::post('/ppdf',[PurchaseController::class,'ppdf']);

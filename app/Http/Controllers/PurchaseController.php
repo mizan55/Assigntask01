@@ -8,7 +8,7 @@ use App\Models\stock_location;
  use App\Models\Payment_term;
  use App\Models\Product;
 use App\Models\Purchase_type;
-
+use PDF;
 class PurchaseController extends Controller
 {
     function index(){
@@ -27,4 +27,18 @@ class PurchaseController extends Controller
       return    $product;
     }
 
+
+    function ppdf(Request $request){
+                $supplier=$request->input('supplier_name');
+                $grandtotal=$request->input('grandtotal');
+
+                
+
+                $data['h']='mizan';
+        $pdf = PDF::loadView('purchase.purchaseinformation', $data);
+        return $pdf->stream('document.pdf');
+                }
+
 } //end class
+
+

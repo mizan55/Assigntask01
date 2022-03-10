@@ -150,9 +150,11 @@
       </tr>
     </tbody>
   </table>
+  <button type='button' class='btn btn-danger btn-sm' id='submit_btn'>Save</button>
   		
   	</div>
   </div>
+
 
 
   <div class="card-footer"></div>
@@ -224,7 +226,8 @@
     	}else{
     		isValid=false;
     		alert('select supplier');
-    		$('#supplier').focus();
+    		//$('#supplier').focus();
+			$('#supplier').addClass('border border-danger');
     		return isValid;
     	}
 }); //end product select onchange
@@ -340,6 +343,31 @@ function purchase_calculation() {
 
 
 </script>
+
+
+<script type = "text/javascript" >
+$('#submit_btn').click(function(){
+
+	//get all value from form
+
+		var supplier_name = $('#supplier option:selected').text(); //to get only selecte text of select box
+		var grandtotal = $('#grandtotal').text();
+		axios.post('/ppdf',{
+			supplier_name:supplier_name,
+			grandtotal:grandtotal
+
+		}).then(function(){
+
+		}).catch(function(){
+
+		});
+
+
+
+
+});
+
+</script>	
 @endsection
 
 
