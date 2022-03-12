@@ -23,7 +23,7 @@ class PurchaseController extends Controller
 
     function Getpurchaseinformation(Request $request){
       $product_id = $request->input('product_id');
-      $product =json_encode(Product::where('product_id','=', $product_id)->with('Vat_Type')->get(['products_name','purchase_price']));
+      $product =json_encode(Product::where('product_id','=', $product_id)->with('Vat_Type')->get(['products_name','purchase_price','product_id']));
       return    $product;
     }
 

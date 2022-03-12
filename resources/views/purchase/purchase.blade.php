@@ -111,10 +111,30 @@
 						</div>
 			</div>
 		</div>  <!--  end col-sm-6 -->
+ <div class="col-sm-6 ps-5">		<button type="button" class="btn btn-success btn-sm " id="add_product">add</button></div>
 	
   </div> <!--end row-->
   <hr>
-  <div class="row" id="proct_tk_quantity">
+  <div class="row" >
+ <table class='table table-hover'>
+				                <thead >
+				                <tr>
+				                <th>Product</th>
+				                <th>Price (Tk.)</th>
+				                <th>Quantity</th>
+
+				                <th>VAT (%)</th>
+				                <th>Amount (Tk.)</th>
+				                <th>Action</th>
+
+				                </tr>
+				                </thead >
+								<tbody id="proct_tk_quantity">
+
+								</tbody>
+							
+				               </table>
+
   
   </div>
   <hr>
@@ -165,14 +185,141 @@
 @endsection
 @section('script')
 <script type = "text/javascript" >
-    $('#productSelect').change(function() {
+
+$(document).ready(function(){
+	//Add button Click Event
+		$('#add_product').click(function(){
+					var supplierval=$('#supplier').val();
+	   			var isValid=true;
+	   			if(supplierval>0){
+	   				var product_id = parseInt($('#productSelect').val());
+    		    $("#productSelect option:selected").attr('disabled','disabled');
+    		    axios.post('/pproduct', {
+				            product_id: product_id
+				        }).then(function(response) {
+				            var jsonData = response.data;
+				            $('<tr id="tr">').html(
+
+				              
+				              
+				                 "<td id='id' >" + jsonData[0].product_id + "</td>" +
+				                "<td id='name'>" + jsonData[0].products_name + "</td>" +
+				                "<td id='purchase_price'>" + jsonData[0].purchase_price + "</td>" +
+				                "<td><input type='text' id='Quantity' value='1' style='width:50px; text-align:center'> </td>" +
+				                "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
+				                "<td>" + jsonData[0].purchase_price + "</td>" +
+				                "<td > <button type='button' class='btn btn-danger btn-sm' id='delete_btn'>Delete</button>" 
+										 ).appendTo('#proct_tk_quantity');
+										 purchase_calculation();
+
+				        }).catch(function(error) {
+
+				        });
+	   			}else{
+	   						isValid=false;
+    		        alert('select supplier');
+	   			}//end if
+
+		});//end add product click function
+
+
+}); //end first document ready
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $('#add_product').click(function() {
+
     	var supplierval=$('#supplier').val();
-	var isValid=true;
+	   var isValid=true;
     	if(supplierval>0){
 
-    		 var product_id = parseInt($('#productSelect').val());
+    		  var product_id = parseInt($('#productSelect').val());
+    		  $("#productSelect option:selected").attr('disabled','disabled');
 
-				        $('#proct_tk_quantity').empty();
+				        // $('#proct_tk_quantity').empty();
 				        $('#totalvat').text('');
 				        $('#total').text('');
 				        $('#cdiscount').text('');
@@ -182,34 +329,20 @@
 				            product_id: product_id
 				        }).then(function(response) {
 				            var jsonData = response.data;
-				            $('<div>').html(
+				            $('<tr id="tr">').html(
 
-				                "<table class='table table-hover'>" +
-				                "<thead>" +
-				                "<tr>" +
-				                "<th>Product</th>" +
-				                "<th>Price (Tk.)</th>" +
-				                "<th>Quantity</th>" +
-
-				                "<th>VAT (%)</th>" +
-				                "<th>Amount (Tk.)</th>" +
-				                "<th>Action</th>" +
-
-				                "</tr>" +
-				                "</thead>" +
-				                "<tbody>" +
-				                " <tr>" +
+				              
+				              
+				                 "<td id='id' >" + jsonData[0].product_id + "</td>" +
 				                "<td id='name'>" + jsonData[0].products_name + "</td>" +
 				                "<td id='purchase_price'>" + jsonData[0].purchase_price + "</td>" +
 				                "<td><input type='text' id='Quantity' value='1' style='width:50px; text-align:center'> </td>" +
 				                "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
 				                "<td>" + jsonData[0].purchase_price + "</td>" +
-				                "<td > <button type='button' class='btn btn-danger btn-sm' id='delete_btn'>Delete</button>" +
+				                "<td > <button type='button' class='btn btn-danger btn-sm' id='delete_btn'>Delete</button>" 
 
-				                "</tr>" +
-				                " </tbody>" +
-				                "  </table>"
-
+				                
+				              
 
 				            ).appendTo('#proct_tk_quantity');
 
@@ -232,9 +365,10 @@
     	}
 }); //end product select onchange
 
+
 function purchase_calculation() {
-	var isValid=true;
-	var supplierval=$('#supplier').val();
+	  var isValid=true;
+	  var supplierval=$('#supplier').val();
     var purchase_price = $('#purchase_price').text();
     var Quantity = parseInt($('#Quantity').val());
     var discount = $('#discount').val();
@@ -246,7 +380,7 @@ function purchase_calculation() {
     $('#Quantity').keyup(function() {
 			        var Quantity = parseInt($('#Quantity').val());
 			        if(Quantity>=1){
-			        	 var Quantity = parseInt($('#Quantity').val());
+			        var Quantity = parseInt($('#Quantity').val());
 			        var discount = $('#discount').val();
 			        var grandtotal = bgrandtotal - discount;
 			        var subtotal = purchase_price * Quantity;
@@ -314,7 +448,9 @@ function purchase_calculation() {
                      }); //discount keyup
 /////discount End
 
-
+// $('#delete_btn').click(function(){
+// 	alert('clicked');
+// });
 
 
     $('#totalvat').text(vat);
@@ -325,15 +461,33 @@ function purchase_calculation() {
 
     
     // delete start
-    $("#delete_btn").click(function() {
-        $('#proct_tk_quantity').empty();
-        $('#totalvat').text('');
-        $('#total').text('');
-        $('#cdiscount').text('');
 
-        $('#grandtotal').text('');
 
-    });
+   // function myFunction(){
+	  //  var product_id =jsonData[0].product_id;
+   //      $('#product_id').empty();
+   //      $('#totalvat').text('');
+   //      $('#total').text('');
+   //      $('#cdiscount').text('');
+
+   //      $('#grandtotal').text('');
+
+   //  };
+   var counter = 0;
+$(document).on("click",'#delete_btn',function(e){
+	var id = $(this).closest("id").val();
+$('#productSelect').val();
+
+  $(this).closest("tr").remove();
+ 
+
+
+
+
+ 			
+});
+
+
     // delete end
 
 
