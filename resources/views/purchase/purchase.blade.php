@@ -188,310 +188,91 @@
 
 $(document).ready(function(){
 	//Add button Click Event
+	 var i = 0;
 		$('#add_product').click(function(){
-					var supplierval=$('#supplier').val();
-	   			var isValid=true;
-	   			if(supplierval>0){
-	   				var product_id = parseInt($('#productSelect').val());
-    		    $("#productSelect option:selected").attr('disabled','disabled');
-    		    axios.post('/pproduct', {
-				            product_id: product_id
-				        }).then(function(response) {
-				            var jsonData = response.data;
-				            $('<tr id="tr">').html(
-
-				              
-				              
-				                 "<td id='id' >" + jsonData[0].product_id + "</td>" +
-				                "<td id='name'>" + jsonData[0].products_name + "</td>" +
-				                "<td id='purchase_price'>" + jsonData[0].purchase_price + "</td>" +
-				                "<td><input type='text' id='Quantity' value='1' style='width:50px; text-align:center'> </td>" +
-				                "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
-				                "<td>" + jsonData[0].purchase_price + "</td>" +
-				                "<td > <button type='button' class='btn btn-danger btn-sm' id='delete_btn'>Delete</button>" 
-										 ).appendTo('#proct_tk_quantity');
-										 purchase_calculation();
-
-				        }).catch(function(error) {
-
-				        });
-	   			}else{
-	   						isValid=false;
-    		        alert('select supplier');
-	   			}//end if
-
-		});//end add product click function
-
-
-}); //end first document ready
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    $('#add_product').click(function() {
-
-    	var supplierval=$('#supplier').val();
-	   var isValid=true;
-    	if(supplierval>0){
-
-    		  var product_id = parseInt($('#productSelect').val());
-    		  $("#productSelect option:selected").attr('disabled','disabled');
-
-				        // $('#proct_tk_quantity').empty();
-				        $('#totalvat').text('');
-				        $('#total').text('');
-				        $('#cdiscount').text('');
-
-				        $('#grandtotal').text('');
-				        axios.post('/pproduct', {
-				            product_id: product_id
-				        }).then(function(response) {
-				            var jsonData = response.data;
-				            $('<tr id="tr">').html(
-
-				              
-				              
-				                 "<td id='id' >" + jsonData[0].product_id + "</td>" +
-				                "<td id='name'>" + jsonData[0].products_name + "</td>" +
-				                "<td id='purchase_price'>" + jsonData[0].purchase_price + "</td>" +
-				                "<td><input type='text' id='Quantity' value='1' style='width:50px; text-align:center'> </td>" +
-				                "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
-				                "<td>" + jsonData[0].purchase_price + "</td>" +
-				                "<td > <button type='button' class='btn btn-danger btn-sm' id='delete_btn'>Delete</button>" 
-
-				                
-				              
-
-				            ).appendTo('#proct_tk_quantity');
-
-
-				            purchase_calculation();
-
-
-
-
-				        }).catch(function(error) {
-
-				        });
-    		
-    	}else{
-    		isValid=false;
-    		alert('select supplier');
-    		//$('#supplier').focus();
-			$('#supplier').addClass('border border-danger');
-    		return isValid;
-    	}
-}); //end product select onchange
-
-
-function purchase_calculation() {
-	  var isValid=true;
-	  var supplierval=$('#supplier').val();
-    var purchase_price = $('#purchase_price').text();
-    var Quantity = parseInt($('#Quantity').val());
-    var discount = $('#discount').val();
-    var subtotal = purchase_price * Quantity;
-    var vat = subtotal * 0.05;
-    var bgrandtotal = subtotal + vat;
-    var grandtotal = bgrandtotal - discount;
-
-    $('#Quantity').keyup(function() {
-			        var Quantity = parseInt($('#Quantity').val());
-			        if(Quantity>=1){
-			        var Quantity = parseInt($('#Quantity').val());
-			        var discount = $('#discount').val();
-			        var grandtotal = bgrandtotal - discount;
-			        var subtotal = purchase_price * Quantity;
-			        var vat = subtotal * 0.05;
-			        var grandtotal = subtotal + vat;
-			        $('#total').text(subtotal);
-			        $('#totalvat').text(vat);
-			        $('#grandtotal').text(grandtotal);
-
-			        }else{
-
-				        $('#totalvat').text('');
-				        $('#total').text('');
-				        $('#cdiscount').text('');
-
-				        $('#grandtotal').text('');
-			        	alert('cant be zero');
-			        }
-			       
-			       
-			    
-    });
-
-
-/////discount start
-
-			       $('#discount').keyup(function() {
-
-			                var discount = $('#discount').val();
-			                var Quantity = parseInt($('#Quantity').val());
-			                var subtotal = purchase_price * Quantity;
-			             	var isValid =true;
-			                if(discount<0 ){
-			                	var isValid =false;
-			                 	alert(' Discount Can not be Zero ');
-			                 	return isValid;
-			                 }
-
-
-			                if(discount>subtotal){
-			                	var isValid =false;
-			                 	alert(' Discount Can not be Greater than total ');
-			                 	return isValid;
-			                 }else{
-					                		var Quantity = parseInt($('#Quantity').val());
-							        		var discount = $('#discount').val();
-							        		var grandtotal = bgrandtotal - discount;
-							        		var subtotal = purchase_price * Quantity;
-							        		var vat = subtotal * 0.05;
-							        		var grandtotal = subtotal + vat - discount;
-							        		$('#cdiscount').text(discount);
-							        		$('#total').text(subtotal);
-							        		$('#totalvat').text(vat);
-							        		$('#grandtotal').text(grandtotal);
-
-
-			                 }
-
-
-				
-					   
-			       		   
-			       
-					 
-                     }); //discount keyup
-/////discount End
-
-// $('#delete_btn').click(function(){
-// 	alert('clicked');
-// });
-
-
-    $('#totalvat').text(vat);
-    $('#total').text(subtotal);
-    $('#cdiscount').text(discount);
-
-    $('#grandtotal').text(grandtotal);
-
-    
-    // delete start
-
-
-   // function myFunction(){
-	  //  var product_id =jsonData[0].product_id;
-   //      $('#product_id').empty();
-   //      $('#totalvat').text('');
-   //      $('#total').text('');
-   //      $('#cdiscount').text('');
-
-   //      $('#grandtotal').text('');
-
-   //  };
-   var counter = 0;
-$(document).on("click",'#delete_btn',function(e){
-	var id = $(this).closest("id").val();
-$('#productSelect').val();
-
-  $(this).closest("tr").remove();
- 
-
-
-
-
- 			
-});
-
-
-    // delete end
-
-
+								var supplierval=$('#supplier').val();
+				   			var isValid=true;
+				   			if(supplierval>0){
+				   				var product_id = parseInt($('#productSelect').val());
+			    		    $("#productSelect option:selected").attr('disabled','disabled');
+			    		    axios.post('/pproduct', {
+							            product_id: product_id
+							        }).then(function(response) {
+
+							            var jsonData = response.data;
+							              i++; 
+							            $('<tr id="tr'+i+'">').html(
+
+							                 // "<td id='id' >" + jsonData[0].product_id + "</td>" +
+							                "<td id='name'>" + jsonData[0].products_name + "</td>" +
+							                "<td class='purchase_price' id='"+i+"'>" + jsonData[0].purchase_price + "</td>" +
+							                "<td><input type='text' class='Quantity' id='"+i+"'  value='1' style='width:50px; text-align:center'> </td>" +
+							                "<td><input type='text' id='vat'  style='width:50px; text-align:center' value='5%'> </td>" +
+							                "<td class='product_total_price' id='"+i+"' >" + jsonData[0].purchase_price + "</td>" +
+							                "<td > <button type='button' class='btn btn-danger btn-sm delete_btn' id='"+i+"'>Delete</button>" 
+													 ).appendTo('#proct_tk_quantity');
+													 total();
+
+							        }).catch(function(error) {
+
+							        });
+				   			}else{
+				   						isValid=false;
+			    		        alert('select supplier');
+				   			}//end if
+});//end add product click function
+
+
+		function total_calculation(){
+			
+
+		} //end total_calculation
+
+		  $(document).on('click', '.delete_btn', function(){  
+		             var button_id = $(this).attr("id"); 
+		             	
+  
+           $('#tr'+button_id+'').remove(); 
+
+      }); //end remove
+
+     $(document).on('keyup', '.Quantity', function(){  
+		             var button_id = $(this).attr("id"); 
+		           
+		             var quantity= parseFloat($('#tr'+button_id+'').find('.Quantity').val());
+		             var rate=$('#tr'+button_id+'').find('.purchase_price').text();
+		              rate = rate==''? 0: rate;
+									quantity =quantity==''? 0:quantity;
+		             if(!isNaN(rate) && !isNaN(quantity) ){
+									var total =	quantity * rate ;
+								  $('#tr'+button_id+'').find('.product_total_price').text(total.toFixed(2));
+								  total()
+    }else{
+							$('#tr'+button_id+'').find('.product_total_price').text('');
+							total()
+							
+					}//end if
+
+      }); //end quantity key up
+
+function total(){
+					var arr = parseFloat($('<tr id="tr'+i+'">').find('.product_total_price').text());
+					var totalcountprice=0;
+			    $.each(arr, function(index, value){
+								totalcountprice +=value;
+			}); //end for each
+			  alert(totalcountprice);
 }
+
+
+
+}); //end first document ready 
+
+
+
+
+	      
+
 
 
 
